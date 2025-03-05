@@ -11,7 +11,23 @@
 - angular.json : Configure les aspects de l'outil AngularCLI. Il définit comment l'application est construite, servie et déployée. Il inclut des configurations pour les environnements de développement et de production, ainsi que pour l'intégration de bibliothèques tierces.
 
 - ng generate environments : génère les environnements
+- ng new [name] : créer une nouvelle application
+- ng serve : construit l'application  et lance un serveur web
+- ng build : compile l'application dans le dossier dist/
+- ng test : exécute les tests unitaires via Karma
+- ng e2e : exécute les tests end to end
+- ng generate component [name] : Génère un nouveau composant
+- ng generate service [name] : Génère un nouveau service
+- ng generate module [name] : Génère un nouveau module
+- ng update : Met à jour les dépendance du projet Angular
+- ng lint : Analayse le code de l'app pour des erreurs potentielles
+  
 
+--port pour ng serve permet de désigner un port
+--open avec ng serve permet d'ouvrir directmeent l'app
+--include avec ng test inclut des tests spécifiques  dans l'exécution
+--skip-tests : (avec ng generate) : génère un composant sans fichier de test
+--dry-run (ng generate (n'importe lequel)) : affiche les fichiers quis eront créés ou modifiés
 
 
 ### Fichiers d'environnements
