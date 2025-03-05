@@ -8,7 +8,8 @@
         </ul>
         <div>
             <div>
-                <input [value]="searchInput">
+                <input placeholder="Rechercher" [(ngModel)]="searchInput">
+                <!--Liaison bidirectionnelle, la propriétédans la classe du composant est modifiable dans les deux sens-->
                 <button (click)="search()">Rechercher</button> <!--(click) est un binding d'évènement-->
             </div>
         </div>
