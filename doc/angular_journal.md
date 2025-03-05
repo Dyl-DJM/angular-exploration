@@ -54,3 +54,72 @@ La commande suivante permet de build avec la configuration d'environnement souha
 ```
 ng build --configuration=production
 ```
+
+
+
+### Composants
+
+Un composant est une brique d'une application Angular, il est constitué de 3 parties : 
+
+- template : la représentation visuelle
+- la classe : la logiqie
+- le décorateur @Component qui spécifie les métadonnées pour le composant comme son sélecteur, le chemin vers le fichier de template et le chemin vers les styles
+
+
+
+#### Propriétés du décorateur @Component
+
+- selector : identifiant du composant dans les balises HTML
+- standalone : Quand cette propriété est à true, elle indique qu'aucun module Angular externe n'est nécessaire pour que ce composant fonctionne. 
+- imports : liste les autres composants, directives ou module utilisé dans le composant
+- template(Url) : défini le HTML associé au composant
+
+
+#### Cycle de détection de changement
+
+Processus automatisé par lequel Angular vérifie les modifications dans les données de l'application qui affectent l'interface utilisateur. Angular manipule lui-même le DOM.
+
+On ne doit pas manipuler nous même le DOM pour 3 raisons : 
+
+- sécurité : cela peut ouvrir des vulnérabilités comme les attaques XSS(cross site scripting)
+- perfs : Angular optimise le cycle de détection de changement pour réduire au max les opération DOM qui sont coûteuses.-
+- Maintenabilité : le code qui manipule le DOM peut être plus complexe à comprendre et maintenir
+
+
+#### Fichiers de tests .specs.ts
+
+Ces fichiers permettent d'écrire les tests unitaires
+
+
+#### Interpolation
+
+Cette syntaxe permet d'insérer des données  dynamiques dans le HTML
+
+```
+template : "Hello, {{title}}"
+```
+
+#### HTML dynamique
+
+l'attribut [value] d'un \<input> permet de lier une propriété de la classe typescript au template. le problème c'est que si l'utilisateur modifie la valeur, elle ne changera pas dans la classe ts.
+
+#### Gestiond es évènements
+
+Les évènements ont une syntaxe 'binding d'évènement' 
+
+```
+()
+```
+
+Par exemple, (click) écoute l'évènement de clic et une fois activé, peut par exemple appelé une fonction : 
+
+```
+<button (click)="search()">Rechercher</button>
+```
+
+
+#### Liaison bidirectionnelle
+
+On utilise la directive : ngModel (dans FormsModule)
+
+la syntaxe [(ngModel)] est appelée "banana in a box" à cause du [()] qui combine le binding de propriété [] et le binding d'évènement ().
