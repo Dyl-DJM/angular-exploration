@@ -6,7 +6,11 @@
                 <a>Home</a>
             </li>
         </ul>
-        <div>
+        <div [ngStyle]="{
+                    'background-color' : searchInput==='One Piece' ? 'purple' : 'white',
+                    'border' : '1px solid',
+                    'padding' : '10px' 
+            }">
             <!--ngClass est utilisé pour ajouter ou retirer des classes conditionnellement, ici si searchInput est
                                                  est une chaîne vide, alors la div sera affichée avec un fond en rouge et vert sinon-->
             <div [ngClass]="{        
@@ -20,3 +24,4 @@
         </div>
     </div>
 </nav>
+
