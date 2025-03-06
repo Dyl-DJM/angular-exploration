@@ -7,7 +7,12 @@
             </li>
         </ul>
         <div>
-            <div>
+            <!--ngClass est utilisé pour ajouter ou retirer des classes conditionnellement, ici si searchInput est
+                                                 est une chaîne vide, alors la div sera affichée avec un fond en rouge et vert sinon-->
+            <div [ngClass]="{        
+                            'redBackground' : searchInput==='', 
+                            'greenBackground' : searchInput!==''
+                        }">
                 <input placeholder="Rechercher" [(ngModel)]="searchInput">
                 <!--Liaison bidirectionnelle, la propriétédans la classe du composant est modifiable dans les deux sens-->
                 <button (click)="search()">Rechercher</button> <!--(click) est un binding d'évènement-->
