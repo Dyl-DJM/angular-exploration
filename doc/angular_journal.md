@@ -123,3 +123,38 @@ Par exemple, (click) écoute l'évènement de clic et une fois activé, peut par
 On utilise la directive : ngModel (dans FormsModule)
 
 la syntaxe [(ngModel)] est appelée "banana in a box" à cause du [()] qui combine le binding de propriété [] et le binding d'évènement ().
+
+
+
+
+### Directives
+
+Les directives sont des instructions qui permettent de manipuler le DOM, d'ajouter des comprotements interactifs et de créer des composants réutilisables dans une app Angular. Il faut imaginer les directives comme des assistants qui aident à manipuler les éléments d'une page de manière dynamique et réactive. On peut dire que cela améliore les capacités de l'élément HTML.
+
+Une directive est un sélecteur (élément, classe ou attribut HTML) Angular qui permet de manipuler le DOM de manière dynamiqueet réactive. Elle ajoute des fonctionnalités aux éléments HTML, leur permettant de de réagir aux changements de données et d'interagir avec l'utilisateur.
+
+#### ngClass
+
+TailwindCSS utilise des classes pour la création de styles, il peut-être très complqiué de gérer les chaînes de caractères. On peut dans ce cas utiliser ngClass pour modifier conditionnellement la valeur de la classe d'un élément HTML.
+
+- Simple : permet de définir des règles complexes de manière lisible et maintenable sans jongler avec des chaînes de caractères
+- Flexibilité : il est facile d'ajouter ou retirer des classes en fonction de multiples conditions ou étas de composants
+- Puissance : avec ngClass gérer des bibliothèques complexes comme Tailwind devient un jeu d'enfant.
+  
+Rappel : Une classe CSS est définie dans un fichier CSS avec la syntaxe : 
+
+```css
+.myClassForBackgrounds {
+    background-color : green;
+}
+```
+
+#### ngStyle
+
+Définis des styles CSS de manière dynamique. Fonctionne comme ngClass mais agit sur des styles CSS au lieu des classes CSS.
+
+
+Dans ngStyle la clé correspond au nom de la propriété CSS et la valeur correspond à la valeur CSS.
+
+
+
