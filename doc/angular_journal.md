@@ -157,4 +157,17 @@ Définis des styles CSS de manière dynamique. Fonctionne comme ngClass mais agi
 Dans ngStyle la clé correspond au nom de la propriété CSS et la valeur correspond à la valeur CSS.
 
 
+### Les pipes
 
+Ce sont des outils puissants pour transformer des données dans les templates Angular. Ils permettent de formatter, filtrer et trier les données de manière déclarative. Angular en propose et on peut en créer soit même.
+
+```
+{{ valeur | nomDuPipe }}
+{{ valeur | nomDuPipe:paramètre1:paramètre2 }}
+```
+
+On peut chaîner les pipes.
+
+# Pipe date
+
+Par défaut, le pipe date affiche les dates en anglais. Pur afficher les dates dans une autre langue, on doit d'abord configurer Angular pour gérer l'internationalisation (souvent abrégée i18n).
