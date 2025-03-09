@@ -168,6 +168,65 @@ Ce sont des outils puissants pour transformer des données dans les templates An
 
 On peut chaîner les pipes.
 
-# Pipe date
+#### Pipe date
 
 Par défaut, le pipe date affiche les dates en anglais. Pur afficher les dates dans une autre langue, on doit d'abord configurer Angular pour gérer l'internationalisation (souvent abrégée i18n).
+
+
+### Les flux de contrôle @if, @for, @switch
+
+
+Angular 17 a introduit une nouvelle écriture pour les directives structurelles, comme les boucles et les conditions, avec l'utilisation de l'arobase devant for, if et switch.
+
+#### @if
+
+La nouvelle syntaxe de @if permet d'insérer des conditions directement dans les templates HTML.
+
+Les bonnes pratiques pourraient être d'utiliser @if pour simplifier les templates et rendre le code plus lisible. Il faut s'assurer que les conditions utilisées dans @if sont claires et bien définies dans le composant typscript pour maintenir la logique séparée de la vue.
+
+
+#### @switch
+
+Peut-être utiliser par exemple pour écrire un composant qui définis le statut d'une commande : En attente, en cours, expédié, ou livré.
+
+Il y a des @case et un @default
+
+
+#### @for
+
+
+```
+@for(product of products | track product.id){
+
+}
+@empty{
+
+}
+```
+
+
+l'instruction "track product.id" permet à Angular de suivre chaque produit par son identifiant (id), ce qui optimise les performances en réutilisant les éléments du DOM lorsque les données changent, au lieu de les recréer entièrement.
+
+@empty, permet de spécifier un comportement si la liste products est vide.
+
+Dans le contexte de @for, des variables sont exposés : 
+
+- $index : index de l'élément actuel dans la liste
+- $first : true si l'élément actuel est le premier de la liste
+- $last : true si l'élément actuel est le dernier de la liste
+- $even : true si l'index de l'élément actuele st pair
+- $odd : true si l'index de l'élément actuel est impair
+- $count : la longueur de la liste
+
+```html
+@for(product of products ; track product.id) {
+    <div>
+        <span>{{index}} - </span>
+    </div>
+}
+```
+
+
+#### Utiliser track
+
+Imaginons une liste de produits où chaque produit a un identifiant unique. Si un produit était ajouté ou supprimé ou modifié, sans track, Angular ne saurait pas directement quel élément du DOM correspond à quel produit et serait donc obligé de reconstruire l'ensemble de la liste pour s'assurer que les changements sont correctement affichés. Cela peut entraîner des performances médiocres. En utilisant track, on dit à Angular : ""Voici comment tu peux identifier chaque élément de manière unique" ce qui lui permet de mettre à jour que les parties nécessaires du DOM.
