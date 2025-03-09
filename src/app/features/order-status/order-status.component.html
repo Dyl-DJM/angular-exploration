@@ -1,0 +1,20 @@
+<div class="order-status">
+    @switch (status) {
+        @case ('pending') {
+            <div>Commande en attente</div>
+        }
+        @case ('processing') {
+            <div>Commande en cours de traitement</div>
+        }
+        @case ('shipped') {
+            <div>Commande expédiée</div>
+        }
+        @case ('delivered') {
+            <div>Commande livrée</div>
+        }
+        @default {
+            <div>Statut de commande inconnu</div>
+        }
+    }
+
+</div>
