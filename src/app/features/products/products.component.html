@@ -2,6 +2,7 @@
     @for (product of products ; track product.id) { <!--track permet à Angular de revenir sur cet affichage si on ajoute
     ou supprime un produit de la liste -->
     <div class="d-flex flex-column align-items-center">
+        <h2>{{$index + 1}} / {{$count}} </h2>
         <div class="product-name text-center">{{product.title}}</div>
         <div class="card-img w-25 h-50">
             <img [src]="product.image" alt="" class="rounded img-fluid">
